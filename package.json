@@ -7,10 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
      "start": "node index.js"
   },
+   "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Erich-z/API-Produtos.git"
+  },
   "keywords": [],
-  "author": "",
+  "author": "Erich Valarini",
   "license": "ISC",
-  "description": "",
+  "description": "Estudo de api com metodo POST, com construcao de forms e validacao para não ir vazio",
+  "homepage": "https://github.com/Erich-z/API-Produtos#readme",
   "dependencies": {
     "express": "^5.1.0"
   }

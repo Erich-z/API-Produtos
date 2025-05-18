@@ -50,7 +50,7 @@ app.get("/", (req, res) =>{
 
           <div class="mb-3">
             <label for="categoria" class="form-label">Categoria</label>
-            <select class="form-select" id="categoria" name="categoria" required>
+            <select class="form-select" id="categoria" name="categoria" >
               <option selected disabled>Selecione uma categoria</option>
               <option value="eletronicos">Eletrônicos</option>
               <option value="vestuario">Vestuário</option>
@@ -62,7 +62,7 @@ app.get("/", (req, res) =>{
             <label for="quantidade" class="form-label">Quantidade em Estoque</label>
             <div class="input-group">
               <span class="input-group-text"><i class="bi bi-stack"></i></span>
-              <input type="number" class="form-control" id="quantidade" name="quantidade" min="0" required>
+              <input type="number" class="form-control" id="quantidade" name="quantidade" min="0" >
             </div>
           </div>
 
@@ -70,7 +70,7 @@ app.get("/", (req, res) =>{
             <label for="preco" class="form-label">Preço de Venda (R$)</label>
             <div class="input-group">
               <span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
-              <input type="number" class="form-control" id="preco" name="preco" step="0.01" min="0" required>
+              <input type="number" class="form-control" id="preco" name="preco" step="0.01" min="0" >
             </div>
           </div>
 
@@ -137,7 +137,7 @@ app.post("/", (req, res) =>{
                     <div class="card shadow rounded-4">
                     <div class="card-body p-4">
                         <h3 class="card-title text-center mb-4">Cadastro de Produto</h3>
-                        <form>
+                        <form method="POST" action="/">
                         
         `;
         if(!nome){
@@ -157,7 +157,7 @@ app.post("/", (req, res) =>{
                             <label for="nome" class="form-label">Nome do Produto</label>
                             <div class="input-group">
                             <span class="input-group-text"><i class="bi bi-box"></i></span>
-                            <input type="text" class="form-control" id="nome" name="nome" value="${nome}" required>
+                            <input type="text" class="form-control" id="nome" name="nome" value="${nome}" >
                             </div>
                 </div>
             `
@@ -184,7 +184,7 @@ app.post("/", (req, res) =>{
             conteudo = conteudo + `
                 <div class="mb-3">
                     <label for="categoria" class="form-label">Categoria</label>
-                    <select class="form-select" id="categoria" name="categoria" required>
+                    <select class="form-select" id="categoria" name="categoria" >
                         <option selected disabled>Selecione uma categoria</option>
                         <option value="eletronicos">Eletrônicos</option>
                         <option value="vestuario">Vestuário</option>
@@ -197,7 +197,7 @@ app.post("/", (req, res) =>{
             conteudo = conteudo + `
                 <div class="mb-3">
                     <label for="categoria" class="form-label">Categoria</label>
-                    <select class="form-select" id="categoria" name="categoria" required>
+                    <select class="form-select" id="categoria" name="categoria" >
                         <option disabled>Selecione uma categoria</option>
                         <option value="eletronicos" ${categoria === "eletronicos" ? "selected" : ""}>Eletrônicos</option>
                         <option value="vestuario" ${categoria === "vestuario" ? "selected" : ""}>Vestuário</option>
@@ -213,9 +213,10 @@ app.post("/", (req, res) =>{
                     <label for="quantidade" class="form-label">Quantidade em Estoque</label>
                     <div class="input-group">
                         <span class="input-group-text"><i class="bi bi-stack"></i></span>
-                        <input type="number" class="form-control" id="quantidade" name="quantidade" min="0" required>
-                        <span class="text-danger">Por favor informe a quantidade</span>
+                        <input type="number" class="form-control" id="quantidade" name="quantidade" min="0" >
+                        
                     </div>
+                    <span class="text-danger">Por favor informe a quantidade</span>
                 </div>
             `
         }else{
@@ -224,7 +225,7 @@ app.post("/", (req, res) =>{
                     <label for="quantidade" class="form-label">Quantidade em Estoque</label>
                     <div class="input-group">
                         <span class="input-group-text"><i class="bi bi-stack"></i></span>
-                        <input type="number" class="form-control" id="quantidade" name="quantidade" value="${quantidade}" min="0" required>
+                        <input type="number" class="form-control" id="quantidade" name="quantidade" value="${quantidade}" min="0" >
                     </div>
                 </div>
             `
@@ -236,9 +237,10 @@ app.post("/", (req, res) =>{
                     <label for="preco" class="form-label">Preço de Venda (R$)</label>
                     <div class="input-group">
                         <span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
-                        <input type="number" class="form-control" id="preco" name="preco" step="0.01" min="0" required>
-                        <span class="text-danger">Por favor informe o preço</span>
+                        <input type="number" class="form-control" id="preco" name="preco" step="0.01" min="0" >
+                        
                     </div>
+                    <span class="text-danger">Por favor informe o preço</span>
                 </div>
             `
         }else{
@@ -247,7 +249,7 @@ app.post("/", (req, res) =>{
                     <label for="preco" class="form-label">Preço de Venda (R$)</label>
                     <div class="input-group">
                         <span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
-                        <input type="number" class="form-control" id="preco" name="preco" value="${preco}" step="0.01" min="0" required>
+                        <input type="number" class="form-control" id="preco" name="preco" value="${preco}" step="0.01" min="0" >
                     </div>
                 </div>
             `
